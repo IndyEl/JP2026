@@ -1,4 +1,6 @@
 addpath('/Users/lyla/Downloads/JP1/')
+addpath('/Users/lyla/Downloads/JP1/slepian_alpha-master/')
+
 clear
 
 
@@ -37,6 +39,7 @@ clear
 
 % Graphics
     % Whole Earth
+    figure(1)
     clf
     subplot(221)
     imagesc(topo)
@@ -72,8 +75,12 @@ clear
     hold off
     title('Partial Earth Topography Spectral Density');
 
+    % Save the figure using
+    print('-dpdf','indy1_1')
+
     % Whole CMB
-    figure;
+    figure(2)
+    clf
     subplot(221)
     imagesc(cmb);
     set(gca, 'YDir', 'normal'); 
@@ -109,3 +116,7 @@ clear
     loglog(l4,Sl4/(1-beltf)^1/100000)
     hold off
     title('Partial CMB Temperature Spectral Density');
+
+
+    % Save the figure using
+    print('-dpdf','indy1_2')
